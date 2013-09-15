@@ -1,0 +1,3 @@
+[submodule "TileStache"]
+	path = TileStache
+	url = git@github.com:mattmakesmaps/TileStache.git
