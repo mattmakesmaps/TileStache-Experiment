@@ -1,5 +1,8 @@
 *.py[cod]
+
+# MK Specific
 .DS_STORE
+.idea
 
 # C extensions
 *.so
