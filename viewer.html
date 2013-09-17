@@ -16,7 +16,7 @@
     <script>
 
 
-        var mbtiles = L.tileLayer('http://localhost:8080/mbtiles_layer/{z}/{x}/{y}.png', {
+        var giflayer = L.tileLayer('http://localhost:8080/gif_layer/{z}/{x}/{y}.png', {
             maxZoom: 16
         });
 
@@ -25,11 +25,11 @@
         });
 
         var baseMaps = {
-            "mbtiles": mbtiles,
+            "giflayer": giflayer,
             "osmproxy": osmproxy
         }
 
-        var map = L.map('map', {layers: [mbtiles]}).setView([38.89, -76.99], 13);
+        var map = L.map('map', {layers: [giflayer]}).setView([38.89, -76.99], 13);
 
         L.control.layers(baseMaps).addTo(map);
     </script>
