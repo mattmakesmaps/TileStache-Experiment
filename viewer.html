@@ -17,21 +17,27 @@
 
 
         var giflayer = L.tileLayer('http://localhost:8080/gif_layer/{z}/{x}/{y}.gif', {
-            maxZoom: 16
+            maxZoom: 5
+        });
+
+        var geography_class = L.tileLayer('http://localhost:8080/mbtiles_layer/{z}/{x}/{y}.png', {
+            maxZoom: 5
         });
 
         var osmproxy = L.tileLayer('http://localhost:8080/osm_layer/{z}/{x}/{y}.png', {
-            maxZoom: 16
+            maxZoom: 5
         });
 
-        var baseMaps = {
-            "giflayer": giflayer,
-            "osmproxy": osmproxy
-        }
+        var mashup = new L.LayerGroup([giflayer, geography_class])
 
-        var map = L.map('map', {layers: [giflayer]}).setView([38.89, -76.99], 13);
+//        var baseMaps = {
+//            "giflayer": giflayer,
+//            "osmproxy": osmproxy
+//        }
 
-        L.control.layers(baseMaps).addTo(map);
+        var map = L.map('map', {layers: [mashup]}).setView([38.89, -76.99], 2);
+
+//        L.control.layers(baseMaps).addTo(map);
     </script>
 </body>
 </html>
